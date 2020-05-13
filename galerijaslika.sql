@@ -20,7 +20,12 @@ create table autor(
 create table lokacija(
     sifra int not null primary key auto_increment,
     ulica varchar(50),
-    grad varchar(50)
-    postanskiBroj int;
+    grad varchar(50),
+    postanskiBroj int
 );
+
+alter table slika add foreign key (autor) references autor(sifra);
+alter table autor add foreign key (lokacijaOdrzavanja) references lokacijaOdrzavanja(sifra);
+
+
 
